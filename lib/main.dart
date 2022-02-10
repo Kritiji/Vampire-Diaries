@@ -15,8 +15,8 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   List<String> images = [
-    "https://images.app.goo.gl/zfLY6WJ3zo4HyyND8",
-    "https://images.app.goo.gl/oZRjAtQtdcQhC5cE8",
+    "images/damon.jpg",
+    "images/elena.jpg",
     "images/stefan.jpg",
     "images/alaric.jpg",
     "images/april.jpg",
@@ -68,7 +68,11 @@ class _MyAppState extends State<MyApp> {
                 ),
                 itemCount: images.length,
                 itemBuilder: (BuildContext context, int index){
-                  return Image.network(images[index]);
+                  return Container(
+                    child:Image.asset(images[index]),
+                    height: 150,
+                    width: 150,
+                  );
                 },
               )),
         )
